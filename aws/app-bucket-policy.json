@@ -1,0 +1,13 @@
+{
+    "Id":"My Policy",
+    "Version": "2020-12-22",
+    "Statement":[
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::mysfit-bucket-2020"
+        }
+    ]
+}

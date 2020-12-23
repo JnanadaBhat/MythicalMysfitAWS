@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="md-4" *ngFor="let mysfit of mysfits">
+      <br />
+      <p>
+        <strong>{{ mysfit.name }}</strong>
+        <br />
+        <img src="{{ mysfit.thumbImageUri }}" alt="{{ mysfit.name }}" />
+      </p>
+      <p>
+        <br />
+        <b>Species: </b>{{ mysfit.species }}
+        <br />
+        <b>Age: </b>{{ mysfit.age }}
+        <br />
+        <br />
+        <b>Good/Evil: </b>{{ mysfit.goodevil }}
+        <br />
+        <br />
+        <b>Lawful/Chaotic: </b>{{ mysfit.lawchaos }}
+        <br />
+      </p>
+    </div>
+  </div>
+</div>
