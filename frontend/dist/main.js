@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Develop\me\AWS\AWSModernApp\frontend\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/MythicalMysfitAWS/frontend/src/main.ts */"zUnb");
 
 
 /***/ }),
