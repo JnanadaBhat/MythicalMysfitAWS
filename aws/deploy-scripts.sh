@@ -1,4 +1,4 @@
-PROJECT_NAME="Mythical Mysfit"
+PROJECT_NAME="Mythical_Mysfit"
 AWS_REGION="$(aws configure get region)"
 DIR="$( pwd )"
 DIR1="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
