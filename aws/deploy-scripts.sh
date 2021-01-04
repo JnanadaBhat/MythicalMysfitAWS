@@ -1,18 +1,18 @@
-PROJECT_NAME="Mythical_Mysfit"
+PROJECT_NAME="mythical-mysfit"
 AWS_REGION="$(aws configure get region)"
-DIR="$( pwd )"
-DIR1="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-file_path=file://~/environment/AWSModerApp/aws/app-bucket-policy.json
+DIR1="$( pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+file_path="file://$DIR/app-bucket-policy.json"
 
 BUCKET_POLICY_PATH=$DIR
 FRONTEND_PATH="$DIR/../frontend"
-FRONTEND_BUILD_PATH="$FRONTEND_PATH/../dist"
+FRONTEND_BUILD_PATH="$FRONTEND_PATH/dist"
 if [[ -z "$AWS_REGION" ]]; then
     AWS_REGION="us-west-2"
 fi
-#S3_BUCKET_NAME="mysfit-bucket-2020" -- existing bucket
-#new bucket
-S3_BUCKET_NAME="$(aws sts get-caller-identity --query Account --output Text)"
+# #S3_BUCKET_NAME="mysfit-bucket-2020" -- existing bucket
+# #new bucket
+S3_BUCKET_NAME="$PROJECT_NAME-frontend-$(aws sts get-caller-identity --query Account --output text)"
 cd $FRONTEND_PATH && \
 npm run build --prod
 aws s3 mb s3://$S3_BUCKET_NAME --region $AWS_REGION || true
